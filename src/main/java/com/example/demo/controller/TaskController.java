@@ -3,11 +3,9 @@ package com.example.demo.controller;
 import com.example.demo.model.Task;
 import com.example.demo.repository.TaskRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.web.bind.annotation.*;
 
 import javax.management.InstanceNotFoundException;
-import java.util.ArrayList;
 
 @RestController
 public class TaskController {
