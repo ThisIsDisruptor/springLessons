@@ -36,6 +36,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .usernameParameter("login").passwordParameter("password")
                 .failureHandler(customAuthenticationFailureHandler)
                 .successHandler(customAuthenticationSuccessHandler)
+                .defaultSuccessUrl("/hello", true)
                 .and().csrf().disable()
                 .sessionManagement();
     }
