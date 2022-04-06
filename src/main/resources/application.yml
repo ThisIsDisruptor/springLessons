@@ -4,6 +4,8 @@ spring:
     url: jdbc:postgresql://localhost:5432/course
     username: postgres
     password: 123456
+  mvc:
+    static-path-pattern: "/resources/**"
 
 flyway:
   url: jdbc:postgresql://localhost:5432/course

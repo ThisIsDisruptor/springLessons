@@ -15,7 +15,6 @@ import java.io.IOException;
 
 @Component
 public class CustomAuthenticationSuccessHandler implements AuthenticationSuccessHandler {
-    private RedirectStrategy redirectStrategy = new DefaultRedirectStrategy();
 
     @Override
     public void onAuthenticationSuccess(HttpServletRequest request,
@@ -29,13 +28,9 @@ public class CustomAuthenticationSuccessHandler implements AuthenticationSuccess
                           HttpServletResponse response,
                           Authentication authentication) throws IOException {
 
-        String targetUrl = "/hello";
-
         response.setStatus(HttpStatus.OK.value());
         response.getWriter().flush();
         response.getWriter().close();
-
-        redirectStrategy.sendRedirect(request, response, targetUrl);
     }
 
     protected void clearAuthenticationAttributes(HttpServletRequest request) {

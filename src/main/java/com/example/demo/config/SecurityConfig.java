@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.config;
 
 import com.example.demo.handler.CustomAuthenticationFailureHandler;
 import com.example.demo.handler.CustomAuthenticationSuccessHandler;
@@ -27,17 +27,22 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests()
-                .antMatchers("/login*", "/hello*").permitAll()
-                .antMatchers(HttpMethod.POST, "/users").permitAll() //registration
-                .anyRequest().authenticated()
-                .and()
-                .formLogin().loginProcessingUrl("/login")
-                .usernameParameter("login").passwordParameter("password")
-                .failureHandler(customAuthenticationFailureHandler)
-                .successHandler(customAuthenticationSuccessHandler)
-                .defaultSuccessUrl("/hello", true)
-                .and().csrf().disable()
+        http
+                .authorizeRequests()
+                    .antMatchers("/login*" ).permitAll()
+                    .antMatchers(HttpMethod.POST, "/users").permitAll() //registration
+                    .antMatchers( "/public/**").permitAll()
+                    .antMatchers( "/private/**").authenticated()
+                    .anyRequest().authenticated()
+                    .and()
+                .formLogin()
+                    .loginProcessingUrl("/login")
+                    .usernameParameter("login").passwordParameter("password")
+                    .failureHandler(customAuthenticationFailureHandler)
+                    .successHandler(customAuthenticationSuccessHandler)
+                    .defaultSuccessUrl("/helloPage", true)
+                    .and()
+                .csrf().disable()
                 .sessionManagement();
     }
 

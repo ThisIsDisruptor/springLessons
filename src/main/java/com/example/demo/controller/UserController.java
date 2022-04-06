@@ -19,7 +19,7 @@ public class UserController {
     }
 
     @GetMapping("/users/me")
-    public User getCurrentUser(@RequestBody User user) {
+    public User getCurrentUser() {
         return userService.getCurrentUser();
     }
 }
