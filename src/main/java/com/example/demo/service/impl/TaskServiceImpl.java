@@ -17,7 +17,11 @@ public class TaskServiceImpl implements TaskService {
     @Autowired
     private TaskRepository taskRepository;
 
+    @Autowired
+    private UserServiceImpl userService;
+
     public Task create(Task task) {
+        task.setUser(userService.getCurrentUser());
         return taskRepository.save(task);
     }
 
