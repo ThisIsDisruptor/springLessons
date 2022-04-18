@@ -1,9 +1,9 @@
 
 CREATE TABLE public.users_task (
 	users_id bigserial NOT NULL,
-	users_table_id bigserial NOT NULL,
+	users_task_id bigserial NOT NULL,
 	task_id bigserial NOT NULL,
-	CONSTRAINT users_task_pkey PRIMARY KEY (users_table_id)
+	CONSTRAINT users_task_pkey PRIMARY KEY (users_task_id)
 );
 
 
