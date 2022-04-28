@@ -1,3 +1,16 @@
+//Check messages
+var url_string = window.location.href;
+var url = new URL(url_string);
+var message = url.searchParams.get("message");
+
+if (message !== null) {
+    //remove get parameters from url
+    window.history.pushState(null, null, window.location.pathname);
+
+    showError(message) ;
+
+}
+
 const registrationForm  = document.getElementById('registrationForm');
 
 registrationForm.addEventListener('submit', function (event) {
