@@ -1,0 +1,1 @@
+setButtonHref('myTasksButton','/tasks/myTasks');

@@ -8,6 +8,6 @@ public class TaskController {
 
     @GetMapping("/tasks/myTasks")
     public String getMyTasks() {
-        return "html/myTasks";
+        return "html/tasks/myTasks";
     }
 }
