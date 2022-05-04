@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create task</title>
+</head>
+<body>
+  <button id="logoutButton" type="button">logout</button>
+
+  <h1>Create task Page</h1>
+
+  <form id='createTaskForm' name='createTaskForm' action="/tasks" method='POST'>
+    <table>
+      <tr>
+        <td>Description:</td>
+        <td><input type='date' name='date' value=''></td>
+      </tr>
+      <tr>
+        <td>Description:</td>
+        <td><input type='text' name='description' value=''></td>
+      </tr>
+      <tr>
+        <td><input type="submit" value="submit" /></td>
+      </tr>
+    </table>
+  </form>
+
+  <button id="myTasksButton" type="button">my tasks</button>
+
+
+  <script src="/js/common/setButtonHref.js"></script>
+  <script src="/js/login/logoutButtonHandler.js"></script>
+  <script src="/js/hello/myTasksButtonHandler.js"></script>
+  <script src="/js/hello/myTasksButtonHandler.js"></script>
+
+</body>
+</html>

@@ -4,7 +4,9 @@ import com.example.demo.model.Task;
 import com.example.demo.service.impl.TaskServiceImpl;
 import com.example.demo.service.impl.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.management.InstanceNotFoundException;
 import java.util.List;
@@ -18,9 +20,10 @@ public class TaskRestController {
     @Autowired
     private UserServiceImpl userService;
 
-    @PostMapping("/tasks")
-    public Task create(@RequestBody Task task) {
-        return taskService.create(task);
+    @PostMapping(value = "/tasks", consumes =  MediaType.APPLICATION_FORM_URLENCODED_VALUE)
+    public ModelAndView create(Task task) {
+        taskService.create(task);
+        return new ModelAndView("redirect:/tasks/myTasks");
     }
 
     @GetMapping("/tasks")

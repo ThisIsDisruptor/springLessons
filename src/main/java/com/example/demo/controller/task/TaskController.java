@@ -10,4 +10,9 @@ public class TaskController {
     public String getMyTasks() {
         return "html/tasks/myTasks";
     }
+
+    @GetMapping("/tasks/createTask")
+    public String createTask() {
+        return "html/tasks/createTask";
+    }
 }
