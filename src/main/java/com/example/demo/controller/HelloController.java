@@ -14,11 +14,11 @@ public class HelloController {
     @Autowired
     private UserServiceImpl userService;
 
-//    @GetMapping("/hello")
-//    public String sayHello(){
-//        String login = userService.getCurrentUser().getLogin();
-//        return "Hello, " + login + "!";
-//    }
+    @GetMapping("/hello")
+    public String sayHello(){
+        String login = userService.getCurrentUser().getLogin();
+        return "Hello, " + login + "!";
+    }
 
     @GetMapping("/helloPage")
     public String helloPage(){

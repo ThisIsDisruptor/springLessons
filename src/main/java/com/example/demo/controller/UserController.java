@@ -35,10 +35,6 @@ public class UserController {
             System.out.println("\n\n------------------\nunique constraint violated!");
             return modelAndView;
         }
-
-
-
-
     }
 
     @GetMapping("/users/me")
