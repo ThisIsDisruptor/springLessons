@@ -11,7 +11,7 @@ export default {
     }
   },
   mounted() {
-    fetch("/vue/vueMessage")
+    fetch("api/vue/vueMessage")
         .then(response => response.text())
         .then(stringData => {
             this.msg = 'Hello, ' + stringData
