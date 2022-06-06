@@ -11,13 +11,12 @@ export default {
     }
   },
   mounted() {
-    fetch("/api/vue/vueMessage")
+    fetch("/vue/vueMessage")
         .then(response => response.text())
         .then(stringData => {
             this.msg = 'Hello, ' + stringData
         })
     }
-
 }
 </script>
 

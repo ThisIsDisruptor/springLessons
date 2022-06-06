@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("api/vue")
+@RequestMapping("/vue")
 public class VueController {
     @GetMapping("/vueMessage")
     public String getDataForVueSample() {

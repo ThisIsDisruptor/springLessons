@@ -18,6 +18,25 @@ repositories {
 	mavenCentral()
 }
 
+//processResources{
+//	dependsOn 'copyFrontendToBuild'
+//}
+//
+//bootJar{
+//	archiveFileName = "app.jar"
+//}
+//
+//task copyFrontendToBuild(type: Copy) {
+//	dependsOn 'npmBuild'
+//	from "$projectDir/src/frontendvue/dist/"
+//	into "$buildDir/resources/main/static"
+//}
+//
+//task npmBuild(type: Exec) {
+//	workingDir './src/frontendvue/'
+//	commandLine 'npm','run', 'build'
+//}
+
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 

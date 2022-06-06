@@ -35,7 +35,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     .antMatchers( "/registration").permitAll() //registration
                     .antMatchers( "/public/**").permitAll()
                     .antMatchers( "/private/**").authenticated()
-                    .antMatchers("/api/vue/vueMessage" ).permitAll()
+                    .antMatchers("/vue/vueMessage" ).permitAll()
                     .anyRequest().authenticated()
                     .and()
                 .formLogin()
