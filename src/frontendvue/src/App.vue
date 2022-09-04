@@ -1,7 +1,14 @@
 <template>
-  <UserInfo :loggedIn="loggedIn"/>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="footer">
+    <UserInfo :loggedIn="loggedIn"/>
+  </div>
+
+  <div class="content">
+    <img alt="Vue logo" src="./assets/logo.png">
+    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  </div>
+  
+  
   
 </template>
 
